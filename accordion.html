@@ -1,0 +1,34 @@
+<style type="text/css">
+	button.a1{background-color: lightblue;color: red;font-family: sans-serif;height: 50px;width: 50%;cursor: pointer;transition: 0.3s;border-radius: 3px;outline: none;border:none;}
+	button.a1:hover,button.a1.active{background-color: darkblue;color: white;}
+	div.a2{background-color: grey;color: black;font-size: 22px;overflow: hidden;transition: 0.5s;border-radius: 3px;display: none;width: 50%; }
+</style>
+<button class="a1" id="a1">Section.1</button>
+<div class="a2" id="a2">Hii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalai
+Hii!!! there i am pradyumna kumar dalai
+Hii!!! there i am pradyumna kumar dalai </div>
+<button class="a1" id="a1">Section.2</button>
+<div class="a2" id="a2">Hii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalai
+Hii!!! there i am pradyumna kumar dalai
+Hii!!! there i am pradyumna kumar dalai </div>
+<button class="a1" id="a1">Section.3</button>
+<div class="a2" id="a2">Hii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalaiHii!!! there i am pradyumna kumar dalai
+Hii!!! there i am pradyumna kumar dalai
+Hii!!! there i am pradyumna kumar dalai </div>
+<script type="text/javascript">
+		var ac=document.getElementsByClassName('a1');
+		var i;
+		for(i=0;i<ac.length;i++){
+		ac[i].onclick=function(){
+
+			this.classList.toggle("active");
+			if(this.nextElementSibling.style.display==="block")
+				{
+					this.nextElementSibling.style.display="none";}
+			else{
+				this.nextElementSibling.style.display="block";
+			}
+			}
+		}
+</script>
+
