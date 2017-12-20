@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	div.tabs{width: 20%;height: 300px;background-color: grey;overflow: hidden;float: left;}
+	div.tabs a{background-color: inherit;font-size: 22px;border:none;display:block;outline: none;padding: 15px;text-decoration: none;color: black;cursor: pointer;}
+	div.tabs a:hover,div.tabs a.active{background-color: black;color: white;}
+	.tabcontent{display: none;width: 80%;height: 300px;background-color: lightgrey;color: black;float: right;text-align: center;}
+</style>
+</head>
+<body>
+<div class="tabs">
+	<span onclick="opencity(event,'paris')"><a class="tab">Paris</a></span>
+	<span onclick="opencity(event,'india')"><a class="tab">India</a></span>
+	<span onclick="opencity(event,'america')"><a class="tab">America</a>
+</div>
+<div class="tabcontent" id="paris"><h3>Paris</h3><p>Hi! there am at Paris now.</p></div>
+<div class="tabcontent" id="india"><h3>India</h3><p>Hi! there am at Paris now.</p></div>
+<div class="tabcontent" id="america"><h3>America</h3><p>Hi! there am at Paris now.</p></div>
+<div class="tabcontent" id="thailand"><h3>Thailand</h3><p>Hi! there am at Paris now.</p></div>
+<script type="text/javascript">
+	function opencity(evt,city){
+		var i,tabcontent,tab;
+		tabcontent=document.getElementsByClassName('tabcontent');
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tab=document.getElementsByClassName("tab");
+		for (i = 0; i < tab.length; i++) {
+			tab[i].className = tab[i].className.replace("active","");
+
+		}
+		document.getElementById(city).style.display = "block";
+		evt.currentTarget.className += "active";
+
+	}
+</script>
+</body>
+</html>

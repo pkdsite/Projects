@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+		div.head{width: 100%;height: 150px;color: black;text-align: center;display: none;padding-top: 100px;}
+		
+		div.tab button{cursor: pointer;font-size: 22px;text-align: center;padding: 12px;float: left;outline: none;border:none;width: 25%;}
+		div.tab span a:hover{background-color: grey;}
+		#india{background-color: orange;}
+		#srilanka{background-color: blue;}
+		#thailand{background-color: red;}
+		#dubai{background-color: green;}
+</style>
+</head>
+<body>
+<div class="head" id="india"><h3>India</h3><p>hi!! there am at India.</p></div>
+<div class="head" id="srilanka"><h3>srilanka</h3><p>hi!! there am at India.</p></div>
+<div class="head" id="thailand"><h3>thailand</h3><p>hi!! there am at India.</p></div>
+<div class="head" id="dubai"><h3>dubai</h3><p>hi!! there am at India.</p></div>
+<div class="tab">
+<button onclick="opencity('india',this,'orange')" id="open" class="tabs">India</button>
+<button onclick="opencity('srilanka',this,'blue')" class="tabs">Srilanka</button>
+<button onclick="opencity('thailand',this,'red')" class="tabs">Thailand</button>
+<button onclick="opencity('dubai',this,'green')" class="tabs">Dubai</button></div>
+<script type="text/javascript">
+	function opencity(city,elment,color){
+		var i,head,tabs;	
+		head=document.getElementsByClassName('head');
+		for (i = 0; i < head.length; i++) {
+			head[i].style.display= "none";
+		}
+		tabs=document.getElementsByClassName("tabs");
+		for (i = 0; i < tabs.length; i++) {
+			//tab[i].className = tab[i].className.replace("active","");
+			tabs[i].style.backgroundColor= "";
+		}
+		document.getElementById(city).style.display = "block";
+		elment.style.backgroundColor= color;
+}
+  		document.getElementById('open').click();
+</script>
+</div>		
+</body>
+</html>

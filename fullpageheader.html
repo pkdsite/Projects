@@ -1,0 +1,49 @@
+<style type="text/css">
+*{box-sizing: border-box;}
+body,html{height: 100%}
+.tablink{border: none;width: 25%;float: left;padding: 12px;outline: none;cursor: pointer;background-color: lightgrey;}
+	.tablink:hover{color: white;background-color: black;}
+	div.tab{height: 100%;text-align: center;display: none;padding-top: 150;}
+	#paris{background-color: red}
+	#india{background-color: green}
+	#thailand{background-color: blue}
+	#dubai{background-color: orange}
+</style>
+<button class="tablink" onclick="opencity('paris', this, 'red')">Paris</button>
+<button  id="defaultOpen" class="tablink" onclick="opencity('india',this,'green')">India</button>
+<button class="tablink" onclick="opencity('thailand',this,'blue')">Thailand</button>
+<button class="tablink" onclick="opencity('dubai', this, 'orange')">Dubai</button>
+<div class="tab" id="paris">
+	<h3>Paris</h3>
+	<p>hey! there i am at paris.</p>
+</div>
+<div class="tab" id="india">
+	<h3>India</h3>
+	<p>hey! there i am at India.</p>
+</div>
+<div class="tab" id="thailand">
+	<h3>Thailand</h3>
+	<p>hey! there i am at Thailand.</p>
+</div>
+<div class="tab" id="dubai">
+	<h3>Dubai</h3>
+	<p>hey! there i am at dubai.</p>
+</div>
+<script type="text/javascript">
+	function opencity(city,elment,color) {
+
+		var i,tab,tablink;
+		tab=document.getElementsByClassName('tab');
+		for (i = 0; i < tab.length; i++) {
+			tab[i].style.display= "none";
+		}
+		tablink=document.getElementsByClassName('tablink');
+		for (i = 0; i < tablink.length; i++) {
+		//tablink[i].className=tablink[i].className.replace("active","");
+		tablink[i].style.backgroundColor= "";
+		}
+		document.getElementById(city).style.display = "block";
+		elment.style.backgroundColor= color;
+		}
+		document.getElementById("defaultOpen").click();
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	body{margin: 0;}
+	.head{background-color: black;overflow: hidden;}
+	.head a{color: white;padding: 10px;text-decoration: none;font-size: 25px;display:block;float: left;}
+	.head .tab{display: none;}
+	.head a:hover{background-color: white;color: black;}
+	
+	@media screen and (max-width: 600px){
+		
+		.head a:not(:first-child){display: none;}
+		.head a.tab{display: block;float: right;}
+		}
+
+
+	@media screen and (max-width: 600px){
+		.head.responsive {position: relative;}
+		.head.responsive .tab {position: absolute;right: 0;top: 0;}
+		
+		.head.responsive a {float: none;display: block;text-align: left;}
+	}
+</style>
+</head>
+<body>
+<div class="head" id="nav">
+	<a href="#" >Home</a>
+	<a href="#" >Services</a>
+	<a href="#" >About Us!</a>
+	<a href="#" ><CONTENT>	</CONTENT>tact Us!</a>
+<a href="javascript:void(0);" class="tab" onclick="show()">&#9776;</a>
+</div>
+<div>
+	<h3>hII!!!!! this z PKD</h3>
+	<p>Hey!! there i am at India</p>
+</div>
+
+<script type="text/javascript">
+	function show() {
+		var x = document.getElementById("nav");
+		if (x.className === "head") {
+			x.className += " responsive";
+		}else{
+			x.className = "head";
+		}
+	}
+</script>
+</body>
+</html>		
