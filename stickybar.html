@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.css"/>
+<style>
+body {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header {
+  background-color: orange;
+  padding: 30px;
+  text-align: center;
+}
+
+#a1 {
+  overflow: hidden;
+  background-color: #333;z-index: 1;
+}
+
+#a1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#a1 a:hover {
+  background-color: orange;
+  color: black;
+}
+
+#a1 a.active {
+  background-color: orange;
+  color: black;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Scroll Down</h2>
+  <p>Scroll down to see the sticky effect.</p>
+</div>
+
+<div id="a1">
+  <a class="active" href="#">Home</a>
+  <a href="#">News</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4"><h3>Hi!! this is pradyumna kumar dalai</h3>
+  <p>Hi!! this is pradyumna kumar dalai.</p>
+  <p>Hi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalai</p></div>
+               <div class="col-sm-4"><h3>Hi!! this is pradyumna kumar dalai</h3>
+  <p>Hi!! this is pradyumna kumar dalai.</p>
+  <p>Hi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalai</p></div>        <div class="col-sm-4"><h3>Hi!! this is pradyumna kumar dalai</h3>
+  <p>Hi!! this is pradyumna kumar dalai.</p>
+  <p>Hi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalaiHi!! this is pradyumna kumar dalai</p></div>
+</div>
+</div>
+
+
+<script>
+window.onscroll = function() {my()};
+
+ navbar = document.getElementById("a1");
+ sticky = navbar.offsetTop;
+
+function my() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
