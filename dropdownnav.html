@@ -1,0 +1,32 @@
+<style type="text/css">
+	.nav{background-color: black;overflow: hidden;}
+	.nav a,drpbtn{text-decoration: none;color: white;float: left;padding: 15px;font-size: 20px;}
+	.nav a:hover,drpbtn:hover{background-color: orange;color: black;}
+	.nav .dropdown{float: left;overflow: hidden;}
+	.drop{display: none;position: absolute;max-width: 150px;margin-top: 52px;background-color: grey;box-shadow: 5px 5px;}
+	.drop a{color: black;display:block;text-decoration: none;padding: 5px;font-size: 18px;float: none;}
+	.dropdown:hover .drop{display:block;}
+</style>
+<div class="nav">
+	<a href="#">Home</a>
+	<div class="dropdown">
+		<a href="" class="drpbtn">Services</a>
+		<div class="drop">
+			<a href="">Web Development</a>
+			<a href="">Web Hosting</a>
+			<a href="">Domain Server</a>
+			<a href="">Support</a>
+		</div>
+	</div>
+	<div class="dropdown">
+		<a href="" class="drpbtn">Courses</a>
+		<div class="drop">
+			<a href="">Web Design</a>
+			<a href="">PHP</a>
+			<a href="">.NET</a>
+			<a href="">Android</a>
+		</div>
+	</div>
+	<a href="">About us</a>
+	<a href="">Contact us</a>
+</div>
