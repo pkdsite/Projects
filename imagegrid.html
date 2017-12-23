@@ -1,0 +1,69 @@
+<style type="text/css">
+	.col{width: 32%;float: left;padding: 5px;}
+	.col img{width: 100%}
+	@media screen and (max-width: 800px){
+		.col{width: 50%}
+	}
+	@media screen and (max-width: 600px){
+		.col{width: 100%}
+	}
+	.btn{text-align: center;margin-left: 45%;}
+	.btn button{outline: none;border:none;background-color: black;color: orange;padding: 10px;font-size: 22px;display: block;float: left;text-align: center;}
+	.btn button:hover{background-color: orange;color: black;}
+	.row{display: table;clear: both;content: "";}
+</style>
+<div class="btn">
+	<button value="1" onclick="one()">1</button>
+	<button value="2" onclick="two()">2</button>
+	<button value="3" onclick="three()">3</button>
+	
+</div><br/><br/><br/><br/>
+<div class="row">
+	<div class="col">
+		<img src="3.jpg">
+		<img src="1.jpg">
+		<img src="2.jpg">
+		<img src="3.jpg">
+		<img src="4.jpg">
+		<img src="1.jpg">
+		<img src="2.jpg">
+	</div>
+	<div class="col">
+		<img src="1.jpg">
+		<img src="4.jpg">
+		<img src="3.jpg">
+		<img src="2.jpg">
+		<img src="1.jpg">
+		<img src="4.jpg">
+		<img src="3.jpg">
+	</div>
+	<div class="col">
+		<img src="4.jpg">
+		<img src="1.jpg">
+		<img src="2.jpg">
+		<img src="3.jpg">
+		<img src="4.jpg">
+		<img src="1.jpg">
+		<img src="2.jpg">
+	</div>
+</div>
+<script type="text/javascript">
+		var col=document.getElementsByClassName("col");
+	function one(){
+		for (var i = 0; i < col.length; i++) {
+			col[i].style.width="100%";
+		}
+	}
+	function two(){
+		
+		for (var i = 0; i < col.length; i++) {
+			col[i].style.width="40%";
+		}
+	}
+	function three(){
+		
+		for (var i = 0; i < col.length; i++) {
+			col[i].style.width="25%";
+		}
+	}
+</script>

@@ -1,0 +1,32 @@
+<style type="text/css">
+	.gallery{width: 100%;height: 120px;display: block;}
+	.gallery img{width: 100px;height: 90px;float: left;display: block;padding: 15px;padding: 15px;}
+	.tab{width: 100%;height: 100%;background-color: rgba(0,0,0,0.9);display: none;}
+	.tab img{width: 80%;padding-top: 15px;height: 400px;margin-left: 10%;}
+	.tab .close{color: grey;top: 180px;right: 15px;position: absolute;font-size: 40px;cursor: pointer;}
+</style>
+<div class="gallery">
+	<img src="1.jpg" onclick="show(this)">
+	<img src="2.jpg" onclick="show(this)">
+	<img src="3.jpg" onclick="show(this)">
+	<img src="4.jpg" onclick="show(this)">
+	<img src="1.jpg" onclick="show(this)">
+</div>
+<h3>Click! on the image.</h3>
+<div class="tab" id="tab">
+	<img id="img">
+	<span class="close" id="close">&times;</span>
+</div>
+<script type="text/javascript">
+	var tab=document.getElementById('tab');
+	var img=document.getElementById('img');
+	function show(i){
+		tab.style.display="block";
+		img.src=i.src;
+
+	}
+	var close=document.getElementById('close');
+	close.onclick=function(){
+		tab.style.display="none";
+	}
+</script>
