@@ -1,0 +1,38 @@
+<style type="text/css">
+	body{background-color: lightgrey;}
+	.middle{margin-left: 35%;background-color: grey;width: 250px;padding: 15px;position: absolute;display: none;animation: anim 0.3s}
+	@-webkit-keyframes anim{
+		from{transform:scale(0)}
+		to{transform: scale(1)}
+	}
+	.width{width: 100%}
+	#submit:hover{background-color: black;color: white;}
+</style>
+<button onclick="show()" id="btn">Log In</button>
+<div class="middle" id="middle">
+	
+	<div>
+		<b><a onclick="close1()" style="font-size: 25px;float: right;right: 20px;cursor: pointer;">&times;</a></b>
+		<img src="1.jpg" class="width" style="border-radius: 50%"><br/>
+		Username:<br/>
+		<input placeholder="Enter Username" class="width"></input><br/>
+		Password:<br/>
+		<input placeholder="Enter Password" class="width"></input><br/><br/>
+		<input id="submit" type="submit" value="Log In" class="width" style="border:none;cursor: pointer;"></input><br/>
+		<input type="checkbox">Remember me</input>
+	</div>
+	<div>
+		<button>Cancel</button>
+		<span style="float: right;">forgot <a href="#">password?</a></span>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	function show() {
+		document.getElementById('middle').style.display="block";
+	}
+	function close1()
+	{
+	document.getElementById('middle').style.display="none";
+	}
+</script>

@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	.a{text-align: center;}
+	.load{background-color: blue;color: white;border-radius: 5px;outline: none;border: none;}
+	 
+	.fa-spinner:before{content: "\f110" !important;}
+	.fa-circle-o-notch:before{content: "\f1ce" !important;}
+	.fa-refresh:before{content: "\f021" !important;}
+	.fa-spin{-webkit-animation:spin 2.5s infinite linear !important;}
+	@-webkit-keyframes spin{
+		0%{transform: rotate(0deg)}
+		100%{transform: rotate(360deg)}}
+</style>
+<div class="a">
+<button class="load"><span class="fa fa-spinner fa-spin"></span>Updating</button>
+
+<button class="load"><span class="fa fa-circle-o-notch fa-spin"></span>Loading</button>
+
+<button class="load"><span class="fa fa-refresh fa-spin"></span>Refreshing</button>
+</div>

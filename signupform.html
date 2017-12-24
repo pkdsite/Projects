@@ -1,0 +1,39 @@
+<style type="text/css">
+	.back{background-color: rgba(0,0,0,0.8);width: 100%;height: 100%;position: relative;display: none;}	
+	.a{font-size: 25px;float: right;margin-right: 20px;margin-top: 15px;cursor: pointer;color: white;}
+	.back .middle{margin-left: 35%;background-color: lightgrey;width: 250px;padding: 15px;position: absolute;animation: anim 0.3s;margin-top: 100px;}
+	@-webkit-keyframes anim{
+		from{transform:scale(0)}
+		to{transform: scale(1)}
+	}
+	input[type="text"]{display: block;width: 100%}
+	button{border:none;}
+	button:hover{background-color: grey;color: white;}
+</style>
+<a onclick="show()" style="background-color: green;color: white;padding: 15px;font-size: 22px;cursor: pointer;">Sign Up</a>
+<div class="back" id="back">
+	<b><a onclick="close1()" class="a" ="">&times;</a></b>
+	<div class="middle">
+		Email:
+		<input type="text" placeholder="Enter Email"></input><br/>
+		
+		Password:
+		<input type="text" placeholder="Enter Password"></input><br/>
+		Repeat Password:
+		<input type="text" placeholder="Repeat Password"></input><br/>
+		<input type="checkbox">I Agree</input><br/>
+		Read <a href="#">Terms and Condition</a><br/><br/>
+		<button style="width: 50%;float: left;background-color: red;">Cancel</button>
+		<button style="width: 50%;background-color: green;">Sign Up</button>
+	</div>
+</div>
+<script type="text/javascript">
+	function show()
+	{
+		document.getElementById('back').style.display="block";
+	}
+	function close1()
+	{
+		document.getElementById('back').style.display="none";
+	}
+</script>

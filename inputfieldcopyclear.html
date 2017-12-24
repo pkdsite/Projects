@@ -1,0 +1,18 @@
+<style type="text/css">
+	input[type="text"]{width: 150px;transition: width 0.3s ease-in-out;}
+	input[type="text"]:focus{width: 100%;}
+</style>
+<input type="text" value="Pradyumna Dalai" id="i1" onfocus="this.value=''"></input>
+<button onclick="show()" value="copy">copy</button>
+first click on copy and then see effect.
+And then focus on input field then see the effect.
+
+<script type="text/javascript">
+	var btn=document.getElementById('i1');
+	function show()
+	{
+		btn.select();
+		document.execCommand('copy');
+		alert("copied" + btn.value);
+	}
+</script>

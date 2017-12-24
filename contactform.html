@@ -1,0 +1,38 @@
+<style type="text/css">
+		.back{width: 100%;height: 1000px;border-radius: 5px;background-color: lightgrey;padding: 15px;}
+		input[type="text"],textarea,select{width: 100%;border-radius: 5px;padding: 5px;}
+		.col-30{float: left;width:25%;padding: 5px;display: block;}
+		.col-70{float: left;width: 50%;padding: 5px;display: block;}
+		@media screen and (max-width: 600px){
+			.col-30,.col-70{width: 100%}
+		}	
+</style>
+<div class="back">
+	<div class="row">
+		<div class="col-30">First Name</div>
+		<div class="col-70"><input type="text" placeholder="Your Firstname.."></input></div>
+	</div>
+
+	<div class="row">
+		<div class="col-30">Last Name</div>
+		<div class="col-70"><input type="text" placeholder="Your Lasttname.."></input></div>
+	</div>
+	<div class="row">
+		<div class="col-30">Country</div>
+		<div class="col-70"><select>
+			<option hidden="hidden">Choose..</option>
+			<option>India</option>
+			<option>Pakistan</option>
+			<option>Nepal</option>
+			<option>Srilanka</option>
+			<option>China</option>
+			<option>Bhutan</option>
+			<option>bangladesh</option>
+		</select></div>
+	</div>
+	<div class="row">
+		<div class="col-30">Message</div>
+		<div class="col-70"><textarea placeholder="Your Lasttname.." style="height: 150px;"></textarea></div>
+	</div>
+	<div class="col-70" style="margin-left: 260px"><input type="submit" value="Submit"></input></div>
+</div>
