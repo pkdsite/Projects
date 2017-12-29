@@ -1,0 +1,16 @@
+<style type="text/css">	
+	.back{width: 100%;height: 100%;background-color: rgba(0,0,0,0.9);position: relative;display: none;}
+	.front{width: 80%;height: 30px;background-color: white;color: black;padding: 10px;top: 200px;left: 100px;position: absolute;text-align: center;}
+</style>
+<input type="button" value="Open div" onclick="my()" style="position: absolute;"></input>
+<div class="back" onclick="my1()" id="back">
+	<div class="front">Hi!! this is PKD.</div>
+</div>
+<script type="text/javascript">
+    function my(){
+    	document.getElementById('back').style.display="block";
+    }
+	function my1(){
+		document.getElementById('back').style.display="none";
+	}
+</script>

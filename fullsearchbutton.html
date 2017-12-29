@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pkd</title>
+<link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+<style>
+button{outline:none;border:none;background-color:blue;color:white;cursor:pointer;}
+.back{background-color:rgba(0,0,0,0.9);position:absolute;width:100%;height:1000px;left:0px;display:none;}
+.back a{top:10px;right:10px;position:absolute;font-size:35px;text-decoration:none;cursor:pointer;color:white;}
+input[type=text]{width:80%;margin-top:200px;float:left;}
+input[type=button]{width:20%;background-color:blue;color:white;margin-top:200px;}
+</style>
+</head>
+
+<body>
+<button onClick="show1()"> Open the Searchbox.</button>
+<div class="back" id="back">
+<a id="a1" onClick="show()">&times;</a>
+<input type="text"></input>
+<input type="button">
+<span class="glyphicon glyphicon-search"></span>
+</input>
+</div>
+<script>
+function show()
+{
+document.getElementById('back').style.display="none";
+}
+function show1()
+{
+document.getElementById("back").style.display="block";
+}
+</script>
+</body>
+</html>

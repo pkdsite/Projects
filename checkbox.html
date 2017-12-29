@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Pkd</title>
+<style>
+.a{ display: block; position: relative; padding-left: 35px;
+    margin-bottom: 12px;cursor: pointer;font-size: 22px;}
+.b{width:25px;height:25px;left:0px;top:0;background-color:   grey;position:absolute;}
+.a input{position:absolute;opacity:0;}
+.a:hover input ~ .b{background-color:lightgrey;}
+.a input:checked ~ .b{background-color:red;}
+.a .c{ left: 9px;top: 5px;width: 5px;height: 10px;
+    border: solid black;border-width: 0 3px 3px 0;}
+</style>
+</head>
+
+<body>
+<label class="a" onClick="my()">Pkd
+<input type="checkbox" id="check" >
+<div class="b">
+</div>
+</label>
+<p style="display:none" id="p">This is pradyumna kumar dalai.</p>
+
+<script>
+function my(){
+ var check=document.getElementById("check");
+ var p=document.getElementById("p");
+ if(check.checked==true)
+ {
+	 p.style.display="block";
+	 }else{
+		 p.style.display="none";
+		 }
+}
+</script>
+</body>
+</html>

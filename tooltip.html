@@ -1,0 +1,15 @@
+<style type="text/css">
+	h2{border-bottom: 1px solid black;}
+	.tool{position: relative;display: inline-block;margin-left: 100px;}
+	.tool .tooltip{width: 200px;background-color: rgba(0,0,0,0.9);color: white;border-radius: 5px;position: absolute;top:130%;margin-left: -90px;padding: 8px;text-align: center;visibility: hidden;}
+	.tool .tooltip::after{content: "";border-width:5px;border-color: transparent transparent rgba(0,0,0,0.9) transparent;bottom:100%;left: 50%;position: absolute;margin-left: -5px;border-style: solid; }
+	.tool:hover .tooltip{visibility: visible;}
+
+</style>
+<h2>Tooltip PKD</h2>
+<div class="tool">PKD
+	<span class="tooltip" >Pradyumna Kumar Dalai</span>
+</div>
+<div class="tool">BBSR
+	<span class="tooltip" id="tooltip">Bhubaneswar</span>
+</div>

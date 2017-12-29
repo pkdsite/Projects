@@ -1,0 +1,28 @@
+<style type="text/css">
+	.load{border-top: 15px solid red;border-right: 15px solid blue;border-bottom: 15px solid orange;border-left: 15px solid green;border-radius: 50%;width: 70px;height: 70px;animation: spin 4s linear infinite;}
+	@-webkit-keyframes spin{
+		from{transform: rotate(0deg);}
+		to{transform: rotate(360deg);}
+	}
+	.animate{position: relative;animation: show1 3s 1;}
+	@-webkit-keyframes show1{
+		from{opacity: 0;}
+		to{opacity:1;}
+	}
+</style>
+<body onload="show()">
+<div class="load" id="load"></div>
+<div style="display:none;" id="text" class="animate">
+  <h2>PKD</h2>
+  <p>Pradyumna Kumar Dalai</p>
+</div>
+</body>
+<script type="text/javascript">
+	function show(){
+	setTimeout(my,2000);
+}
+	function my(){
+		document.getElementById('text').style.display="block";
+		document.getElementById('load').style.display="none";
+	}
+</script>

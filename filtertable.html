@@ -1,0 +1,44 @@
+<style type="text/css">
+  input{width: 80%;}
+  #myTable {border-collapse: collapse; width: 100%; border: 1px solid #ddd; font-size: 18px; }
+
+  #myTable th, #myTable td {text-align: left; padding: 10px;}
+  #myTable th{background-color: lightgrey}
+  #myTable tr {border-bottom: 1px solid #ddd; }
+
+</style>
+<input id="list1" placeholder="Search.." onkeyup="my()"></input>
+<button>Search</button>
+<table id="myTable">
+  <tr>
+  <th>Country</th><th>Capital</th>
+  </tr>
+  <tr><td>India</td><td>Delhi</td></tr>
+  <tr><td>Srilanka</td><td>Colombo</td></tr>
+  <tr><td>Bangladesh</td><td>Dhaka</td></tr>
+  <tr><td>America</td><td>Washinton</td></tr>
+  <tr><td>China</td><td>Bejeing</td></tr>
+  <tr><td>Australia</td><td>Canberra</td></tr>
+
+</table>
+<script>
+function my() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("list1");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+ for (i = 0; i < tr.length; i++) {
+  td = tr[i].getElementsByTagName("td")[0];
+  if (td) {
+   if (td.innerHTML.toUpperCase().indexOf(filter) > -1) 
+      {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+.check{ position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;}
+.check input{display:none;}
+.slide{ position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;}
+.slide:before{
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;}
+input:checked + .slide{background-color:red;}
+input:checked + .slide:before{-webkit-transform:translate(25px,0);}
+</style>
+
+</head>
+
+<body>
+<label class="check">
+<input type="check"></input>
+<span class="slide"></span>
+</label>
+
+</body>
+</html>

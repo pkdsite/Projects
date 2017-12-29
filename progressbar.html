@@ -1,0 +1,24 @@
+<style type="text/css">
+	.pro{width: 100%;height: 20px;background-color: lightgrey;position: relative;}
+	.pro1{width: 0;height: 20px;background-color: green;position: absolute;}
+</style>
+<div class="pro">
+	<div class="pro1" id="pro1">
+		
+	</div>
+</div>
+<input type="button" value="click me!" onclick="my()"></input>
+<script type="text/javascript">
+function my(){
+		var width=0;
+		 var id=setInterval(my1,10);
+		 function my1(){
+		 	if (width>=100) {
+		 		clearInterval(id);
+		 	}else{
+		 		width++;
+		 		document.getElementById('pro1').style.width=width + "%";
+		 	}
+		 }
+	}	
+</script>

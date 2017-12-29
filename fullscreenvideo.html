@@ -1,0 +1,25 @@
+<style type="text/css">
+	.foot{position: fixed;bottom:0;width: 100%;height: 150px;background-color: rgba(0,0,0,0.5);}
+	video{position: fixed;width: 100%;height: 100%;}
+	button{border: none;outline: none;color: white;background-color: black;float: left;}
+</style>
+<video autoplay="autoplay" controls="controls" loop id="myvideo">
+	<source src="raes.mp4" type="video/mp4">
+</video>
+<div class="foot">
+	<button id="btn" onclick="my()">Pause</button>
+	Hii This is Pradyumna kumar dalai.Watching Raes the movie.
+</div>
+<script type="text/javascript">
+	var btn=document.getElementById('btn');
+	var video=document.getElementById('myvideo');
+	function my(){
+		if (video.Paused) {
+			video.play();
+			btn.innerHTML="Pause";
+		}else{
+			video.pause();
+			btn.innerHTML="Play";
+		}
+	}
+</script>

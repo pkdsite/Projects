@@ -1,0 +1,91 @@
+<style type="text/css">
+	input {width: 100%;padding: 12px;border: 1px solid #ccc;
+    border-radius: 4px;box-sizing: border-box;margin-top: 6px;
+    margin-bottom: 16px;}
+    input[type=checkbox]{float:left;width: 25px;}
+    input[type=submit] {background-color: #4CAF50;color: white;}
+    /* Style the container for inputs */
+    .container {background-color: lightgrey;padding: 20px;}
+    .msg{padding: 15px;background-color: lightgrey;color: blue;position: relative;display: none;}
+    .valid{color: green;}
+    .valid:after{content: "  Done";position: relative;}
+    .invalid{color: red};
+    
+</style>
+<div class="container">
+  <form action="/action_page.php">
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" required>
+
+    <label for="psw">Password</label>
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <input type="checkbox" id="check" onclick="my()">Show Password</input>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div class="msg" id="msg">
+	<h3>Password must contain:</h3>
+	<p class="invalid" id="lower">A lowercase letter.</p>
+	<p class="invalid" id="upper">A Uppercase letter.</p>
+	<p class="invalid" id="number">A Number.</p>
+	<p class="invalid" id="length">minimum 8 character.</p>
+</div>
+<script type="text/javascript">
+	var lower=document.getElementById('lower');
+	var upper=document.getElementById('upper');
+	var number=document.getElementById('number');
+	var length_=document.getElementById('length');	
+	document.getElementById('psw').onfocus=function(){
+
+	document.getElementById('msg').style.display="block";
+	}
+
+	document.getElementById('psw').onblur=function(){
+
+	document.getElementById('msg').style.display="none";
+	}
+	var psw1=document.getElementById('psw');
+    psw1.onkeyup=function(){
+	var lower_case=/[a-z]/g;
+	if (psw1.value.match(lower_case)) {
+		lower.classList.remove('invalid');
+		lower.classList.add('valid');
+	}else{
+		lower.classList.remove('valid');
+		lower.classList.add('invalid');
+	}
+	var upper_case=/[A-Z]/g;
+	if (psw1.value.match(upper_case)) {
+		upper.classList.remove('invalid');
+		upper.classList.add('valid');
+	}else{
+		upper.classList.remove('valid');
+		upper.classList.add('invalid');
+	}
+	var number_=/[0-9]/g;
+	if (psw1.value.match(number_)) {
+		number.classList.remove('invalid');
+		number.classList.add('valid');
+	}else{
+		number.classList.remove('valid');
+		number.classList.add('invalid');
+	}
+	if (psw1.value.length==8 | psw1.value.length>8) {
+		length_.classList.remove('invalid');
+		length_.classList.add('valid');
+	}else{
+		length_.classList.remove('valid');
+		length_.classList.add('invalid');
+	}
+
+}
+
+function my(){
+	if (psw1.type==="password") {
+		psw1.type="text";
+	}else{
+		psw1.type="password";
+	}
+}
+</script>

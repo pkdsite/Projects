@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+	.slide{width: 100%;height: 15px;background-color: lightgrey;-webkit-appearance:none;outline: none;}
+	.slide::-webkit-slider-thumb{width: 25px;height: 25px;cursor: pointer;background-color: blue;-webkit-appearance:none;border-radius: 50%;}
+</style>
+
+<body>
+<input type="range" min="1" max="100" value="50" class="slide" id="inp"></input>
+<p id="p1"></p>
+<script type="text/javascript">
+	document.getElementById('p1').innerHTML=document.getElementById('inp').value;
+  document.getElementById('inp').oninput = function() {
+  document.getElementById('p1').innerHTML = this.value;
+}
+</script>
+</body>
+</html>
