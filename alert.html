@@ -1,0 +1,30 @@
+<style type="text/css">
+	.alert{width: 80%;height: 20px;color: white;padding: 8px;position: relative;left: 10%;top: 10%;}
+	.alert.success{background-color: green;}
+	.alert.danger{background-color: red;}
+	.alert.info{background-color: blue;}
+	.alert.warning{background-color: orange;}
+	.clsbtn{float: right;font-size: 22px;cursor: pointer;}
+</style>
+<div class="alert success">Hii!!
+	<span class="clsbtn">&times;</span>
+</div><br/>
+<div class="alert danger">This is
+	<span class="clsbtn">&times;</span>
+</div><br/>
+<div class="alert info">Pradyumna Kumar
+	<span class="clsbtn">&times;</span>
+</div><br/>
+<div class="alert warning">Dalai
+	<span class="clsbtn">&times;</span>
+</div>
+<script type="text/javascript">
+	var close=document.getElementsByClassName('clsbtn');
+	for (var i = 0; i < close.length; i++) {
+		close[i].onclick=function(){
+			var parent=this.parentElement;
+			setTimeout(function(){parent.style.display="none";},200);
+		}
+	}
+	
+</script>
