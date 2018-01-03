@@ -1,0 +1,21 @@
+<h2 id="countdown"></h2>
+<script type="text/javascript">
+	var countdown=new Date("Aug 15,2018 11:59:59").getTime();
+	
+	function count() {
+		var now=new Date().getTime();
+		var diff=countdown-now;
+		var day=Math.floor(diff/(1000*60*60*24));
+		var hour=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+		var minute=Math.floor((diff%(1000*60*60))/(1000*60));
+		var second=Math.floor((diff%(1000*60))/1000);
+		document.getElementById('countdown').innerHTML=day + 'd' + hour +'h'+minute+'m'+second+'s' ;
+
+	}
+	var x=setInterval(count,1000);
+	if (diff<0) {
+		clearInterval(x);
+	}
+
+
+</script>

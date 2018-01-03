@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	body {height: 2000px;background: black;}
+
+    #mySVG {position: fixed;top: 15%;width: 400px;height: 210px;
+            margin-left:30%;}
+</style>
+</head>
+<body>
+<svg id="mySVG">
+  <path fill="none" stroke="white" stroke-width="5" id="triangle"  d="M150 0 L75 200 L225 200 Z" />
+  
+</svg>
+<script type="text/javascript">
+	var tri=document.getElementById("triangle");
+	var len=tri.getTotalLength();
+	tri.style.strokeDasharray=len;
+	tri.style.strokeDashoffset=len;
+	window.onscroll=function() {
+		var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / 
+		(document.documentElement.scrollHeight - document.documentElement.clientHeight);
+  var draw = len * scrollpercent;
+  tri.style.strokeDashoffset = len - draw;
+	}
+</script>
+</body>
+</html>

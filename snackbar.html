@@ -1,0 +1,24 @@
+<style type="text/css">
+	.snack{width: 100px;height: 30px;background-color: black;color: white;border-radius: 10px;padding: 10px;text-align: center;position: absolute;left: 450px;visibility: hidden;bottom: 100px;}
+	#snack.show{visibility: visible;animation: fadein 0.5s,fadeout 0.5s 2.5s;}
+	@-webkit-keyframes fadein{
+		from{bottom: 0;opacity: 0;}
+		to{bottom: 100px;opacity: 1}
+	}
+	@-webkit-keyframes fadeout {
+    from {bottom: 100px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+	
+</style>
+<button id="btn" onclick="my()">Open/Close</button>
+<div class="snack" id="snack">Pradyumna Kumar Dalai</div>
+<script type="text/javascript">
+	
+		document.getElementById('snack').addClass="show";
+function my() {
+	document.getElementById('snack').classList.toggle('show');
+}
+	
+</script>

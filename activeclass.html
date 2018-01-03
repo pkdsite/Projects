@@ -1,0 +1,23 @@
+<style type="text/css">
+	.btn{width: 50px;padding: 5px;font-size: 22px;background-color: lightgrey;color: black;outline: none;border:none;cursor: pointer; }
+	.active,.btn:hover{background-color: grey;color: white;}	
+</style>
+
+<div id="btn">
+  <button class="btn">1</button>
+  <button class="btn">2</button>
+  <button class="btn active">3</button>
+  <button class="btn">4</button>
+  <button class="btn">5</button>
+</div>
+<script type="text/javascript">
+	var btn=document.getElementById("btn");
+	var bttn=btn.getElementsByClassName("btn");
+	for (var i = 0; i < bttn.length; i++) {
+		bttn[i].addEventListener("click",function() {
+		var act=document.getElementsByClassName("active");
+		act[0].className=act[0].className.replace("active","");
+			this.className += " active";
+		})
+	}
+</script>

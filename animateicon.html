@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+	.battery{font-size: 50px}
+</style>
+<div class="battery fa" id="btr"></div>
+<br/>
+<div class="battery fa" id="a"></div>
+<script type="text/javascript">
+	
+	function charge(){
+		var btr=document.getElementById('btr');
+		btr.innerHTML="&#xf244";
+		setTimeout(function(){btr.innerHTML="&#xf243"},1000);
+		setTimeout(function(){btr.innerHTML="&#xf242"},2000);
+		setTimeout(function(){btr.innerHTML="&#xf241"},3000);
+		setTimeout(function(){btr.innerHTML="&#xf240"},4000);
+	}
+	charge();
+	setInterval(charge,5000);
+	function hourglass() {
+        var a;
+        a = document.getElementById("a");
+        a.innerHTML = "&#xf251;";
+        setTimeout(function() {a.innerHTML = "&#xf252;";}, 1000);
+        setTimeout(function() {a.innerHTML = "&#xf253;";}, 2000);
+}
+hourglass();
+setInterval(hourglass, 3000);
+</script>

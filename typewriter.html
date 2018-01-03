@@ -1,0 +1,17 @@
+<style type="text/css">
+	body{background-color: lightgrey;padding: 150px}
+</style>
+<h2 id="typewrite" style="text-align: center;"></h2>
+<script type="text/javascript">
+	var i=0;
+	var text='Hii!! This is Pradyumna Kumar Dalai Known as a Web Developer.';
+	function typewriter() {
+		if (i<text.length) {
+			document.getElementById('typewrite').innerHTML += text.charAt(i);
+		i++;
+		setTimeout(typewriter,50);
+		}	
+
+	}
+	typewriter();
+</script>
