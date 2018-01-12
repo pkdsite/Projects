@@ -1,0 +1,13 @@
+<label>Pounds:</label><input type="number" onchange="convert(this.value)" oninput="convert(this.value)"></input><br/>
+Kilograms:<label id="op"></label>
+<hr/>
+<label>Farenheit:</label><input type="number" onchange="convert1(this.value)" oninput="convert1(this.value)" ></input><br/>
+Celsius:<label id="op1"></label>
+<script type="text/javascript">
+	function convert(val){
+		document.getElementById('op').innerHTML=val/2.2046;
+	}
+	function convert1(val){
+		document.getElementById('op1').innerHTML=(val-32)/1.8;
+	}
+</script>
