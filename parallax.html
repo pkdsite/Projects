@@ -1,20 +1,22 @@
-
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 	body{margin: 0;padding: 0;}
-	.navbar{background-color: black;color: lightgrey;height: 25px;padding: 15px;font-size: 20px}
-	.data{height: 400px;background:url('intro-bg.jpg');background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover;text-align: center; }
-	.img1{width: 120px;height: 120px;border-radius: 50%;margin-top: 120px}
-	.para{height: 200px;background-color: lightgrey;color: black;padding: 15px;font-size: 20px;text-align: center;}
-	.coup{width: 300px;height:450px;box-shadow: 0 4px 5px 0;left: 35%;position: absolute;text-align: left;border:5px dotted black;border-radius: 5px}
-	.head{width: 100%;height: 30px;color: white;font-size: 22px;background-color: violet;text-align: center;}
-	.foot{width: 100%;height: 80px;color: white;font-size: 20px;background-color: violet;bottom: 0;position: absolute;}
-	code{color: black;}
-	span{color: red}
-	.h1{height: 400px;background: url('tiger.jpg');background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover;text-align: center;}
-	.d{margin-top:100px;}
-	.fa{width:50px;padding: 10px;font-size: 22px;text-align: center;text-decoration: none;border-radius: 5px;transition: transform 0.6s;border-radius: 60%;height: 50px;}
+	.bar{background-color: black;color: lightgrey;height: 25px;width: 100%;padding: 15px;font-size: 20px;}
+	.top{position: fixed;z-index: 1}
+	.footer{position: relative;bottom: 0px;}
+	.data{height: 400px;width: 100%;background:url('intro-bg.jpg');background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover;text-align: center; padding: 15px;left: 0px;right: 0px}
+	.img1{width: 150px;height: 150px;border-radius: 50%;margin-top: 120px}
+	.para{height: 200px;width: 100%;background-color: lightgrey;color: black;padding: 15px;font-size: 20px;text-align: center;}
+	
+	.detail{background-color: rgb(0,0,0);position: relative;padding: 15px;width: 100%;height:210px; }
+
+	.h1{height: 400px;width: 100%;background: url('tiger.jpg');background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover;text-align: center;padding: 15px}
+	
+	.fa{width:50px;padding: 10px;font-size: 22px;text-align: center;text-decoration: none;transition: transform 0.6s;border-radius: 60%;height: 50px;}
+	.fa-github{background-color: black;color: white; border: 1px solid black;}
+	.fa-github:hover{background-color:white;color:black;transform: rotate(360deg);}
 	.fa-facebook:hover{background-color: white;color:#3B5998;transform: rotate(360deg); }
 	.fa-facebook{background-color: #3B5998;color: white; border: 1px solid #3B5998;}
 	.fa-google{background-color:#dd4b39 ;color: white;border: 1px solid #dd4b39; }
@@ -25,35 +27,56 @@
 	.fa-linkedin:hover{background-color: white;color:#007bb5;transform: rotate(360deg);}
 	.fa-skype{background-color: #00aff0;color: white;border: 1px solid #00aff0;}
 	.fa-skype:hover{background-color: white;color:#00aff0;transform: rotate(360deg);}
-	a{margin-top: 150px}
-
+	a{margin-top: 150px;text-decoration: none;color: black;}
+	button{background-color: lightgrey;border-radius: 5px;width: 100px;height: 50px;padding: 10px;outline: none;position: absolute;top: 80px;cursor: pointer;border-style: none;font-size: 24px}
+	.btn1{left:10%;}
+	.btn2{left: 45%;}
+	.btn3{left: 80%;}
+	abbr{text-decoration: none;}
+	@media screen and (min-width: 460px){
+			.data{width: 100%}
+			.detail{width: 100%}
+			.para{width: 100%}
+			.h1{width: 100%}
+			.fa{width: 25px;height: 25px}
+			.footer{font-size: 14px}
+			button{width: 65px;font-size: 14px}
+			.h1{background-size: cover;}
+			.btn1{left:8%;}
+			.btn2{left: 40%}
+			.btn3{left: 75%}
+	}
 </style>
-<div class="navbar">
-    <a id="type">Pradyumna's</a> 
+<div class="bar top">
+    <a id="type" style="color: white">pkdsite.tk</a> 
 </div>
 
 <div class="data">
-<img src="pkd 1.jpg" class="img1">
-<p style="color: white;font-size: 22px;padding: 10px;"><b>Er. Pradyumna Kumar Dalai </p></b><p style="color: white">Web Developer</p></div>
+	<img src="pkd 1.jpg" class="img1">
+	<p style="color: white;font-size: 22px;padding: 10px;">
+	<b>Er. Pradyumna Kumar Dalai </p></b><p style="color: white">Web Developer</p>
+</div>
 
 <div class="para"><p style="margin-top: 80px" id="typewrite"></p></div>
-<div style="height: 600px;">
-	<div class="coup" style="margin-top: 70px">
-	<div class="head">My Project</div>
-	<img src="pizza.jpg" style="width: 100%;height: 150px;">
-	<h2><b>BUY @ 40% OFF</b></h2>
-	<p>Buy any two pan pizza and get one pizza at 40% discount.Offer is valid only order by app.Coupon will be used for purchase more than 499/-.</p>
-	<div class="foot"><br/>Use Code:<code>PIZZ@40</code><br/><span>Valid till 31 March 2018</span></div>
-</div>
+
+<div class="detail">
+	<div><button class="btn1"><abbr title="1.HTML5 2.CSS3 3.JAVASCRIPT 4.JQUERY 5.BOOTSTRAP">Skills</abbr></button></div>
+
+	<div><button class="btn2"><a href="https://github.com/pkdsite/Projects" target="_blank">Projects</a></button></div>
+	<div><button class="btn3"><a href="PKD CV.pdf">CV</a></button></div>
 </div>
 <div class="h1">
 
-	<a href="https://www.facebook.com" class="fa fa-facebook"></a>
-	<a href="https://www.google.com" class="fa fa-google"></a>
-	<a href="https://www.twitter.com" class="fa fa-twitter"></a>
-	<a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
+	<a href="https://github.com/pkdsite" class="fa fa-github"></a>
+	<a href="https://www.facebook.com/papun94" class="fa fa-facebook"></a>
+	<a href="https://plus.google.com/u/0/?pageId=none" class="fa fa-google"></a>
+	<a href="https://twitter.com/pradyumna_dalai" class="fa fa-twitter"></a>
+	<a href="https://www.linkedin.com/in/pradyumna-kumar-dalai-a0a53a104/" class="fa fa-linkedin"></a>
 	<a href="https://www.skype.com" class="fa fa-skype"></a>
 
+</div>
+<div class="bar footer">
+	All &copy; rights reserved @pkdsite
 </div>
 <script type="text/javascript">
 	var i=0;
