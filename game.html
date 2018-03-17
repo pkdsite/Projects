@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PK's GAME</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="js.js"></script>
+	<style type="text/css">
+	* {margin: 0;padding: 0}
+	canvas{background-color: #eee; display: block;margin: 0 auto;}
+	</style>
+</head>
+<body>
+<canvas id="mycanvas" width="460" height="480">
+		
+</canvas>
+<script type="text/javascript">
+var canvas = document.getElementById('mycanvas');
+var ctx = canvas.getContext('2d');
+   var x = canvas.width/2;
+   var y = canvas.height-30;
+   var dx = 2;
+   var dy = -2;
+   var ballRadius = 10;
+   var paddleHeight = 10;
+   var paddleWidth = 75;
+   var paddleX = (canvas.width-paddleWidth)/2;
+   var paddleY = canvas.height-paddleHeight;
+   var leftPressed = false;
+   var rightPressed = false;
+   var brickWidth = 70;
+   var brickHeight = 20;
+   var brickPadding = 10;
+   var brickOffsetTop = 30;
+   var brickOffsetLeft = 30;
+   var brickColumnCount = 5;
+   var brickRowCount = 3;
+   var score = 0;
+    var brick = [];
+    for (var c = 0; c < brickColumnCount; c++) {
+      brick[c] = [];
+      for (var r = 0; r < brickRowCount; r++) {
+          brick[c][r] = {x: 0 , y: 0, status: 1};
+      }
+    }
+   document.addEventListener("keydown", keyDownHandler, false);
+   document.addEventListener("keyup", keyUpHandler, false);
+   function keyDownHandler(e){
+    if (e.keyCode == 39) {
+      rightPressed = true;
+   }else if (e.keyCode == 37) {
+    leftPressed = true;
+   }
+ }
+
+   function keyUpHandler(e){
+    if (e.keyCode == 39){ 
+      rightPressed = false;
+   }else if (e.keyCode == 37) {
+    leftPressed = false;
+   }
+ }
+
+   function drawball(){
+    ctx.beginPath();
+    ctx.arc(x,y,ballRadius,Math.PI*2, false);
+    ctx.fillStyle="blue";
+    ctx.fill();
+    ctx.closePath();
+   }
+
+   function drawPaddle() {
+     ctx.beginPath();
+     ctx.rect(paddleX,paddleY,paddleWidth,paddleHeight);
+     ctx.fillStyle= "blue";
+     ctx.fill();    
+     ctx.closePath();
+   }
+
+   function drawBrick(){
+    for (var c = 0; c < brickColumnCount; c++) {
+      for (var r = 0; r < brickRowCount; r++) {
+      	if (brick[c][r].status == 1){
+        var brickX = (c*(brickWidth + brickPadding) + brickOffsetLeft);
+        var brickY = (r*(brickHeight + brickPadding) + brickOffsetTop);
+        brick[c][r].x = brickX;
+        brick[c][r].y = brickY;
+        ctx.beginPath();
+        ctx.rect(brickX, brickY, brickWidth, brickHeight);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.closePath();
+       }
+      }
+    }
+   }
+  
+		
+ function collisionDetection(){
+ 	for (var c= 0; c < brickColumnCount; c++) {
+ 		for (var r = 0; r < brickRowCount; r++) {
+
+         var b = brick[c][r];
+ 	     if (b.status == 1) {
+          if (x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
+                dy = -dy;
+                b.status = 0;
+                score++;
+                if (score == brickColumnCount*brickRowCount) {
+                  alert("YOU WIN ! CONGO..!");
+                  document.location.reload();
+                }
+              } 
+            }
+          }
+       }
+    } 
+   	
+   function drawScore(){
+
+      ctx.font = "16px Arial";
+      ctx.fillStyle = "blue";
+      ctx.fillText("score: "+score, 10, 20);
+
+   }
+
+   function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    drawBrick();
+    drawball();
+    drawPaddle();
+	 collisionDetection();
+  drawScore();
+    
+    if (x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+      dx = -dx;
+    }
+     if (y + dy < ballRadius) {
+      dy = -dy;
+     } else if (y + dy > canvas.height-ballRadius) {
+      if (x > (paddleX - 3) && x < ((paddleX + paddleWidth) + 3)) {
+        dy = -dy;
+      } else {
+        alert('GAME OVER');
+        document.location.reload();
+      }
+     }
+
+    if (rightPressed && paddleX < canvas.width-paddleWidth) {
+      paddleX += 7;
+    }else if (leftPressed && paddleX > 0) {
+      paddleX -= 7;
+    }
+
+    x += dx;
+    y += dy;
+   }
+   
+
+   setInterval(draw, 10);
+   
+</script>
+</body>
+</html>
